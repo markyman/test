@@ -1,3 +1,3 @@
 # test
 
-this is a test repositoyr
+this is a test repository
