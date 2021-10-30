@@ -2,4 +2,4 @@
 
 this is a test repository
 
-[test](https://www.google.com)
+[test](https://github.com/GeyserMC/Geyser)
