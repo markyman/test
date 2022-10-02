@@ -32,19 +32,18 @@ function readStdString(ptr) {
 //     }
 // });
 
-// let interceptor = Interceptor.attach(ptr_google_breakpad__fileid__fileid, {
-//     onEnter: function (args) {
-//         console.log(ptr_string);
-//         console.log(hexdump(args[0]));
-//         console.log(hexdump(args[1]));
-//     },
-//     onLeave: function (retval) {
-//         console.log(retval);
-//         console.log(hexdump(retval));
-//     },
-// });
+let interceptor = Interceptor.attach(ptr_google_breakpad__fileid__fileid, {
+    onEnter: function (args) {
+        // console.log(ptr_string);
+        console.log(args[0].readInt());
+        console.log(args[1].readUtf8String());
+    },
+    onLeave: function (retval) {
+        console.log(retval.readUtf8String());
+    },
+});
 
-let fn_google_breakpad__fileid__fileid = new NativeFunction(ptr_google_breakpad__fileid__fileid, 'pointer', ['pointer', 'pointer']);
-console.log(hexdump(fn_google_breakpad__fileid__fileid(Memory.alloc(64), Module.getBaseAddress("libminecraftpe.so").add(0x0C5E3438))));
+// let fn_google_breakpad__fileid__fileid = new NativeFunction(ptr_google_breakpad__fileid__fileid, 'pointer', ['pointer', 'pointer']);
+// console.log(hexdump(fn_google_breakpad__fileid__fileid(Memory.alloc(64), Module.getBaseAddress("libminecraftpe.so").add(0x0C5E3438))));
 
-// console.log("Hooked into process. Please start a new single player game.");
+console.log("Hooked into process. Please start a new single player game.");
