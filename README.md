@@ -2,4 +2,4 @@
 
 this is a test repository
 
-[test](https://github.com/GeyserMC/Geyser)
+[test](https://github.com/bundabrg/McReverse)
